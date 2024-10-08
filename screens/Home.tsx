@@ -6,18 +6,15 @@ import { RootStackParamList, MenuItem } from './RootStackParams';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native-gesture-handler';
 
-
 type HomeScreenProps = {
   navigation: StackNavigationProp<RootStackParamList, 'Main'>;
   menuItems: MenuItem[];
   addMenuItem: (newItem: MenuItem) => void;
 };
 
-
-
-  const HomeScreen: React.FC<HomeScreenProps> = ({navigation, menuItems, addMenuItem }) => {
-    // Calculate the total number of menu items
-    const totalMenuItems = menuItems.length;
+const HomeScreen: React.FC<HomeScreenProps> = ({ navigation, menuItems, addMenuItem }) => {
+  // Calculate the total number of menu items
+  const totalMenuItems = menuItems.length;
 
   return (
     <SafeAreaView style={styles.safeView}>
@@ -58,7 +55,7 @@ const styles = StyleSheet.create({
   menuItem: { padding: 10, borderBottomWidth: 1, borderColor: '#ccc' },
   totalMenuText: { fontSize: 20, fontWeight: 'bold', marginBottom: 10 }, // New style for total menu items
   safeView: { flex: 1 },
-  scrollView: { marginHorizontal: 20 },
+  scrollView: { marginHorizontal: 21 },
 });
 
 export default HomeScreen;
