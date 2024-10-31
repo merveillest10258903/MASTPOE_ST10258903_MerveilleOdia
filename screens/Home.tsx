@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   totalMenuText: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
   },
