@@ -1,15 +1,19 @@
 // screens/RootStackParams.ts
-export type MenuItem = {
-  id: string;
+
+
+export interface MenuItem {
+  id: string; // Unique identifier
   name: string;
   description: string;
-  course: string;
-  price: number;
-};
+  course: string; // e.g., "Starter", "Main", "Dessert"
+  price: number; // Price in your desired currency
+}
+
 
 export type RootStackParamList = {
   Welcome: undefined;
-  Main: { menuItems: MenuItem[]; addMenuItem: (newItem: MenuItem) => void }; // Ensure addMenuItem is included here
-  AddMenu: { addMenuItem: (newItem: MenuItem) => void };
+  Main: { menuItems: MenuItem[]; addMenuItem: (newItem: MenuItem) => void };
+  AddMenu: { menuItems: MenuItem[]; addMenuItem: (newItem: MenuItem) => void };
   Search: undefined;
 };
+

@@ -7,14 +7,11 @@ import HomeScreen from './screens/Home';
 import AddMenuScreen from './screens/AddMenu';
 import SearchScreen from './screens/Search';
 
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator<RootStackParamList>(); // Use your RootStackParamList type
 
 const App = () => {
-  // Initial menu items state
   const [menuItems, setMenuItems] = useState<MenuItem[]>([
-    { id: '1', name: 'Grilled Chicken Salad', description: 'A healthy grilled chicken with fresh greens.', course: 'Starter', price: 20.99 },
-    { id: '2', name: 'Beef Steak', description: 'Juicy grilled steak with garlic butter.', course: 'Main', price: 14.99 },
-    { id: '3', name: 'Chocolate Lava Cake', description: 'Rich chocolate cake with molten center.', course: 'Dessert', price: 6.99 },
+    // Your initial menu items...
   ]);
 
   // Function to add a new menu item
@@ -22,12 +19,17 @@ const App = () => {
     setMenuItems((prevItems) => [...prevItems, newItem]);
   };
 
+  // Function to delete a menu item
+  const deleteMenuItem = (id: string) => {
+    setMenuItems((prevItems) => prevItems.filter(item => item.id !== id));
+  };
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Welcome">
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Main">
-          {props => <HomeScreen {...props} menuItems={menuItems} addMenuItem={addMenuItem} />}
+          {props => <HomeScreen {...props} menuItems={menuItems} addMenuItem={addMenuItem} deleteMenuItem={deleteMenuItem} />}
         </Stack.Screen>
         <Stack.Screen name="AddMenu">
           {props => <AddMenuScreen {...props} addMenuItem={addMenuItem} />}

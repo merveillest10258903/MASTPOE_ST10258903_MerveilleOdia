@@ -1,24 +1,21 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from './RootStackParams';
-import { Picker } from '@react-native-picker/picker';
+import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { MenuItem } from './RootStackParams';
 
 type AddMenuScreenProps = {
-  navigation: StackNavigationProp<RootStackParamList, 'AddMenu'>;
-  route: any; // add this line to avoid type errors
-  addMenuItem: (newItem: { id: string; name: string; description: string; course: string; price: number }) => void;
+  navigation: any; // adjust the type as necessary
+  addMenuItem: (newItem: MenuItem) => void;
 };
 
 const AddMenuScreen: React.FC<AddMenuScreenProps> = ({ navigation, addMenuItem }) => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [course, setCourse] = useState(''); // Default to an empty string
+  const [course, setCourse] = useState('');
   const [price, setPrice] = useState('');
 
-  const handleAddMenuItem = () => {
-    const newItem = {
-      id: Math.random().toString(), // Unique ID generation
+  const handleAddItem = () => {
+    const newItem: MenuItem = {
+      id: Math.random().toString(), // generate a unique ID
       name,
       description,
       course,
@@ -30,9 +27,8 @@ const AddMenuScreen: React.FC<AddMenuScreenProps> = ({ navigation, addMenuItem }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Add Menu Item</Text>
       <TextInput
-        placeholder="Name Of Dish"
+        placeholder="Item Name"
         value={name}
         onChangeText={setName}
         style={styles.input}
@@ -43,38 +39,32 @@ const AddMenuScreen: React.FC<AddMenuScreenProps> = ({ navigation, addMenuItem }
         onChangeText={setDescription}
         style={styles.input}
       />
-      
-      {/* dropdown for course selection*/}
-      <Text style={styles.label}>Course:</Text>
-      <Picker
-        selectedValue={course}
-        onValueChange={(itemValue) => setCourse(itemValue)}
-        style={styles.picker}
-      >
-        <Picker.Item label="Select a course" value="" />
-        <Picker.Item label="Starter" value="Starter" />
-        <Picker.Item label="Main" value="Main" />
-        <Picker.Item label="Dessert" value="Dessert" />
-      </Picker>
-      {/* Input price for*/}
       <TextInput
-        placeholder="Price Of Dish"
-        value={price}
-        onChangeText={setPrice}
-        keyboardType="numeric"
+        placeholder="Course"
+        value={course}
+        onChangeText={setCourse}
         style={styles.input}
       />
-      <Button title="Add Item" onPress={handleAddMenuItem} />
+      <TextInput
+        placeholder="Price"
+        value={price}
+        onChangeText={setPrice}
+        style={styles.input}
+        keyboardType="numeric"
+      />
+      <Button title="Add Menu Item" onPress={handleAddItem} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
-  header: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
-  input: { borderWidth: 1, borderColor: 'gray', borderRadius: 5, padding: 10, marginBottom: 15 },
-  label: { fontSize: 18, marginBottom: 10 },
-  picker: { borderWidth: 1, borderColor: 'gray', borderRadius: 5, marginBottom: 15 },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    marginBottom: 10,
+    padding: 10,
+  },
 });
 
 export default AddMenuScreen;
