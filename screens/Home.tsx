@@ -41,9 +41,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation, menuItems, addMenuI
       <SafeAreaView style={styles.safeView}>
         <ScrollView style={styles.scrollView}>
 
-        <View style={styles.mainPicture}> 
-                        <Image style={styles.BannerImage} source={require('../img/logo1.jpg')} resizeMode='contain'/> 
-                    </View>
+        
 
           <Text style={styles.totalMenuText}>Total Menu Items: {totalMenuItems}</Text>
           <Text style={styles.header}>Menu</Text>
