@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { MenuItem } from './RootStackParams';
 import { Picker } from '@react-native-picker/picker';
 
@@ -28,6 +28,7 @@ const AddMenuScreen: React.FC<AddMenuScreenProps> = ({ navigation, addMenuItem }
 
   return (
     <View style={styles.container}>
+
       <TextInput
         placeholder="Item Name"
         value={name}

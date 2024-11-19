@@ -40,8 +40,15 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation, menuItems, addMenuI
     <View style={styles.container}>
       <SafeAreaView style={styles.safeView}>
         <ScrollView style={styles.scrollView}>
+
+        <View style={styles.mainPicture}> 
+                        <Image style={styles.BannerImage} source={require('../img/logo1.jpg')} resizeMode='contain'/> 
+                    </View>
+
           <Text style={styles.totalMenuText}>Total Menu Items: {totalMenuItems}</Text>
           <Text style={styles.header}>Menu</Text>
+
+
 
           <FlatList
             data={menuItems}
@@ -66,7 +73,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation, menuItems, addMenuI
             style={styles.addButton}
             onPress={() => navigation.navigate('AddMenu', { menuItems, addMenuItem })}
           >
-            <Text style={styles.buttonText}>Add Menu Item</Text>
+            <Text style={styles.buttonText}>Add Menu</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -109,7 +116,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
 
-  
+
   buttonText: { color: '#ffffff', textAlign: 'center', fontWeight: 'bold'},
   addButton: {
     backgroundColor: '#007bff',
@@ -143,6 +150,26 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 5,
   },
+
+
+  mainPicture: {
+    alignItems: 'center', // Center the image horizontally
+    marginBottom: 20, // Add spacing below the image
+  },
+  BannerImage: {
+    width: '90%', // Adjust width as a percentage of the screen
+    height: 150, // Set a fixed height for consistency
+    borderRadius: 10, // Add rounded corners
+    borderWidth: 2, // Optional border
+    borderColor: '#007bff', // Border color to match buttons
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 0, height: 2 }, // Shadow offset
+    shadowOpacity: 0.25, // Shadow transparency
+    shadowRadius: 3.84, // Shadow blur radius
+    elevation: 5, // Elevation for Android shadow
+  },
+
+
 });
 
 export default HomeScreen;

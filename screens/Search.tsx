@@ -22,9 +22,6 @@ type SearchScreenProps = {
 
 
 
-
-
-
 const SearchScreen: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
 
