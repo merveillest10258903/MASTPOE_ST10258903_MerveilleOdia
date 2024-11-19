@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { MenuItem } from './RootStackParams';
 import { Picker } from '@react-native-picker/picker';
 
@@ -62,7 +62,20 @@ const AddMenuScreen: React.FC<AddMenuScreenProps> = ({ navigation, addMenuItem }
         style={styles.input}
         keyboardType="numeric"
       />
-      <Button title="Add Menu Item" onPress={handleAddItem} />
+      <Button title="AddMenu" onPress={handleAddItem} />
+
+
+      
+     
+      <TouchableOpacity
+            style={styles.searchButton}
+            onPress={() => navigation.navigate('Search')}
+          >
+            <Text style={styles.searchButtonText}>Search</Text>
+          </TouchableOpacity>
+
+
+
     </View>
   );
 };
@@ -87,6 +100,34 @@ const styles = StyleSheet.create({
   picker: {
     width: '100%',
   },
+
+
+  buttonText: { color: '#ffffff', textAlign: 'center', fontWeight: 'bold'},
+  addButton: {
+    backgroundColor: '#007bff',
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 20,
+    alignItems: 'center',
+  },
+  searchButton: {
+    backgroundColor: '#007bff',
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 20,
+    
+    alignItems: 'center',
+   
+  },
+  searchButtonText: {
+    color: '#ffffff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+
+
+
+
 });
 
 export default AddMenuScreen;

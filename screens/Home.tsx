@@ -108,20 +108,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 5,
   },
-  buttonText: { color: '#ffffff', textAlign: 'center' },
+
+  
+  buttonText: { color: '#ffffff', textAlign: 'center', fontWeight: 'bold'},
   addButton: {
     backgroundColor: '#007bff',
     padding: 10,
     borderRadius: 5,
-    marginTop: 10,
+    marginTop: 20,
     alignItems: 'center',
   },
   searchButton: {
     backgroundColor: '#007bff',
     padding: 10,
     borderRadius: 5,
+    marginTop: 20,
+    
     alignItems: 'center',
-    marginBottom: 10,
+   
   },
   searchButtonText: {
     color: '#ffffff',
