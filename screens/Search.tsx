@@ -11,16 +11,94 @@ const SearchScreen = () => {
       title: 'Starters',
       image: require('../img/starter.jpg'), // Replace with your image path
     },
+
+    {
+      id: 1,
+      title: 'Starters',
+      image: require('../img/starter1.jpg'), // Replace with your image path
+    },
+
+    {
+      id: 1,
+      title: 'Starters',
+      image: require('../img/starter3.jpg'), // Replace with your image path
+    },
+
+    {
+      id: 1,
+      title: 'Starters',
+      image: require('../img/starters5.jpg'), // Replace with your image path
+    },
+
+
     {
       id: 2,
       title: 'Main Course',
       image: require('../img/main.jpg'), // Replace with your image path
     },
+
+    {
+      id: 2,
+      title: 'Main Course',
+      image: require('../img/supper2.jpg'), // Replace with your image path
+    },
+
+    {
+      id: 2,
+      title: 'Main Course',
+      image: require('../img/supper3.jpg'), // Replace with your image path
+    },
+
+
+    {
+      id: 2,
+      title: 'Main Course',
+      image: require('../img/supper4.jpg'), // Replace with your image path
+    },
+
+
+    {
+      id: 2,
+      title: 'Main Course',
+      image: require('../img/supper5.jpg'), // Replace with your image path
+    },
+
+
+
     {
       id: 3,
       title: 'Dessert',
       image: require('../img/dessert.jpg'), // Replace with your image path
     },
+
+ {
+      id: 3,
+      title: 'Dessert',
+      image: require('../img/dessert1.jpg'), // Replace with your image path
+    },
+
+
+    {
+      id: 3,
+      title: 'Dessert',
+      image: require('../img/dessert2.jpg'), // Replace with your image path
+    },
+
+    {
+      id: 3,
+      title: 'Dessert',
+      image: require('../img/dessert3.jpg'), // Replace with your image path
+    },
+
+
+
+
+
+
+
+
+
+    
   ];
 
   // Filter categories based on the search query

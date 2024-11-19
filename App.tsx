@@ -11,6 +11,12 @@ const Stack = createStackNavigator<RootStackParamList>(); // Use your RootStackP
 
 const App = () => {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([
+
+    
+      { id: '1', name: 'Grilled Chicken Salad', description: 'A healthy grilled chicken with fresh greens.', course: 'Starter', price: 9.99 },
+      { id: '2', name: 'Beef Steak', description: 'Juicy grilled steak with garlic butter.', course: 'Main', price: 8.99 },
+      { id: '3', name: 'Chocolate Lava Cake', description: 'Rich chocolate cake with molten center.', course: 'Dessert', price: 6.99 },
+
     // Your initial menu items...
   ]);
 
