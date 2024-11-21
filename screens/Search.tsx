@@ -27,19 +27,19 @@ const SearchScreen: React.FC = () => {
 
   // Sample data for menu categories with unique IDs
   const categories: Category[] = [
-    { id: 1, title: 'Starters', image: require('../img/starter.jpg') },
-    { id: 2, title: 'Starters', image: require('../img/starter1.jpg') },
-    { id: 3, title: 'Starters', image: require('../img/starter3.jpg') },
-    { id: 4, title: 'Starters', image: require('../img/starters5.jpg') },
-    { id: 5, title: 'Main Course', image: require('../img/main.jpg') },
-    { id: 6, title: 'Main Course', image: require('../img/supper2.jpg') },
-    { id: 7, title: 'Main Course', image: require('../img/supper3.jpg') },
-    { id: 8, title: 'Main Course', image: require('../img/supper4.jpg') },
-    { id: 9, title: 'Main Course', image: require('../img/supper5.jpg') },
-    { id: 10, title: 'Dessert', image: require('../img/dessert.jpg') },
-    { id: 11, title: 'Dessert', image: require('../img/dessert1.jpg') },
-    { id: 12, title: 'Dessert', image: require('../img/dessert2.jpg') },
-    { id: 13, title: 'Dessert', image: require('../img/dessert3.jpg') },
+    { id: 1, title: 'Delicous Tapes', image: require('../img/starter.jpg') },
+    { id: 2, title: 'Classic Caprese Salads', image: require('../img/starter1.jpg') },
+    { id: 3, title: 'Tomatoes Capreses', image: require('../img/starter3.jpg') },
+    { id: 4, title: 'Guacamole Bites', image: require('../img/starters5.jpg') },
+    { id: 5, title: 'Parmesan Crusted Chicken with Salads', image: require('../img/main.jpg') },
+    { id: 6, title: 'Crispy Fish with French Fries', image: require('../img/supper2.jpg') },
+    { id: 7, title: 'Hibachi Chicken with Fried Rice', image: require('../img/supper3.jpg') },
+    { id: 8, title: 'Classic Round Steak and Mashed Potatoes', image: require('../img/supper4.jpg') },
+    { id: 9, title: 'Classic Round Steak and Peas', image: require('../img/supper5.jpg') },
+    { id: 10, title: 'Caramal Pudding', image: require('../img/dessert.jpg') },
+    { id: 11, title: 'Mini Pineapple Cheesecakes', image: require('../img/dessert1.jpg') },
+    { id: 12, title: 'Raspberry Swirl Cheesecake cups', image: require('../img/dessert2.jpg') },
+    { id: 13, title: ' Delicous Cheesecake', image: require('../img/dessert3.jpg') },
   ];
 
   // Filter categories based on the search query
@@ -58,7 +58,7 @@ const SearchScreen: React.FC = () => {
       <Text style={styles.title}>Search for Menu Items</Text>
       <TextInput
         style={styles.searchBar}
-        placeholder="Search for a category..."
+        placeholder="Search for a startes, main course or dessert..."
         value={searchQuery}
         onChangeText={(text: string) => setSearchQuery(text)}
       />
