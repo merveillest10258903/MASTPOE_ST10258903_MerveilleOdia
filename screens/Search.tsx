@@ -58,7 +58,7 @@ const SearchScreen: React.FC = () => {
       <Text style={styles.title}>Search for Menu Items</Text>
       <TextInput
         style={styles.searchBar}
-        placeholder="Search for a startes, main course or dessert..."
+        placeholder="Search for a startes, main course and dessert..."
         value={searchQuery}
         onChangeText={(text: string) => setSearchQuery(text)}
       />
